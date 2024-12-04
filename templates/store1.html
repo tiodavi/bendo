@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明誠店 - 點餐系統</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .menu-item-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price {
+            color: #e44d26;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .order-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .store-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        .menu-banner {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .menu-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-banner {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>明誠店 - 點餐系統</h1>
+        
+        <form method="POST" action="/order" class="order-form">
+            <div class="menu-banner">
+                <img src="https://i.imgur.com/YOUh12k.jpg" alt="菜單圖片" class="menu-image">
+            </div>
+            <div class="menu-grid">
+                <!-- 招牌炸排 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="招牌炸排,105" id="meal1" required>
+                                <label for="meal1">招牌炸排</label>
+                            </div>
+                            <span class="price">$105</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 鐵路排骨 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="鐵路排骨,105" id="meal2">
+                                <label for="meal2">鐵路排骨</label>
+                            </div>
+                            <span class="price">$105</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 香滷雞腿雞腿 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="香滷雞腿,105" id="meal3">
+                                <label for="meal3">香滷雞腿</label>
+                            </div>
+                            <span class="price">$105</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 香酥雞腿 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="香酥雞腿,110" id="meal4">
+                                <label for="meal4">香酥雞腿</label>
+                            </div>
+                            <span class="price">$110</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 燒烤雞腿 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="燒烤雞腿,110" id="meal5">
+                                <label for="meal5">燒烤雞腿</label>
+                            </div>
+                            <span class="price">$110</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 瓜子肉丸 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="瓜子肉丸,80" id="meal6">
+                                <label for="meal6">瓜子肉丸</label>
+                            </div>
+                            <span class="price">$80</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 慢燉豬腳 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="慢燉豬腳,95" id="meal7">
+                                <label for="meal7">慢燉豬腳</label>
+                            </div>
+                            <span class="price">$95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 醬燒滷肉 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="醬燒滷肉,95" id="meal8">
+                                <label for="meal8">醬燒滷肉</label>
+                            </div>
+                            <span class="price">$95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 紅燒牛肉 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="紅燒牛肉,110" id="meal9">
+                                <label for="meal9">紅燒牛肉</label>
+                            </div>
+                            <span class="price">$110</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 慢燉牛筋 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="慢燉牛筋,110" id="meal10">
+                                <label for="meal10">慢燉牛筋</label>
+                            </div>
+                            <span class="price">$110</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 乾煎松阪 -->
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <div class="menu-item-title">
+                            <div class="radio-container">
+                                <input type="radio" name="meal" value="乾煎松阪,100" id="meal11">
+                                <label for="meal11">乾煎松阪</label>
+                            </div>
+                            <span class="price">$100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="userName">姓名：</label>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="remarks">備註：</label>
+                <textarea id="remarks" name="remarks"></textarea>
+            </div>
+
+            <button type="submit">提交訂單</button>
+        </form>
+
+        <div class="store-info">
+            <h2>明誠店 Mingcheng Store</h2>
+            <p>高雄市左營區明誠二路386號</p>
+            <p>訂購專線：07-550-8721 07-550-8751</p>
+        </div>
+    </div>
+
+    <script>
+        // 當選擇餐點時自動設定價格
+        document.querySelectorAll('input[name="meal"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    const [mealName, price] = this.value.split(',');
+                    document.getElementById('price').value = price;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
