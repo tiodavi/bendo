@@ -537,6 +537,436 @@
         .store-link:hover {
             background-color: var(--secondary-color);
         }
+
+        .collapse-buttons {
+            margin: 20px 0;
+        }
+        
+        .collapse-buttons .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .card {
+            margin-bottom: 20px;
+        }
+        
+        .card-body {
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .collapse-buttons .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .menu-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .menu-form .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .menu-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .menu-form select,
+        .menu-form input,
+        .menu-form textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        .menu-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .menu-form button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .menu-form {
+                padding: 10px;
+            }
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .menu-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-item label {
+            margin: 0;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .price {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .menu-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-item label {
+            margin: 0;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .price {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .name-input input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .menu-section {
+            margin-bottom: 20px;
+        }
+
+        .menu-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            flex: 0 0 calc(20% - 12px);  /* 5個項目平均分配空間 */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            min-width: 150px;
+        }
+
+        .name-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .name-input input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .menu-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-item label {
+            margin: 0;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .price {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-row {
+                justify-content: space-between;
+            }
+
+            .menu-item {
+                flex: 0 0 calc(50% - 8px);
+            }
+
+            .name-input {
+                flex: 0 0 100%;
+                order: 999;  /* 在手機版將姓名欄位移到菜單下方 */
+                margin-top: 15px;
+            }
+        }
+
+        .menu-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .menu-item {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            min-width: 150px;
+        }
+
+        .menu-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-item label {
+            margin: 0;
+            cursor: pointer;
+            flex-grow: 1;
+            white-space: nowrap;
+        }
+
+        .price {
+            color: #ff4444;
+            font-weight: bold;
+        }
+
+        .name-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .name-field input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            height: 100px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-row {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .menu-item {
+                flex: 0 0 calc(50% - 8px);
+            }
+
+            .name-field {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+
+        .menu-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .menu-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex: 0 0 calc(50% - 8px);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .menu-item input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-item label {
+            margin: 0;
+            cursor: pointer;
+            flex-grow: 1;
+        }
     </style>
 </head>
 <body>
@@ -569,12 +999,132 @@
         </div>
         <button type="submit">提交訂單</button>
     </form>
+<!-- 添加三個 collapse 按鈕 -->
+<div class="collapse-buttons">
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseMenu1" role="button">
+            錦堂
+        </a> 
+         
+        
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMenu2">
+            桌上賓
+        </button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMenu3">
+            八葉
+        </button>
+    </p>
 
+    <!-- Collapse 內容區域 -->
+    <div class="collapse" id="collapseMenu1">
+        <div class="card card-body">
+            錦堂菜單內容...
+            <form action="{{ url_for('order') }}" method="POST" class="menu-form">
+                <!-- 菜單網格 3x4 -->
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="招牌炸排,105" id="meal1" required>
+                        <label for="meal1">招牌炸排</label>
+                        <span class="price">$105</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="瓜子肉丸,85" id="meal2">
+                        <label for="meal2">瓜子肉丸</label>
+                        <span class="price">$85</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="鐵路排骨,105" id="meal3">
+                        <label for="meal3">鐵路排骨</label>
+                        <span class="price">$105</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="慢燉豬腳,95" id="meal4">
+                        <label for="meal4">慢燉豬腳</label>
+                        <span class="price">$95</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="香滷雞腿,105" id="meal5">
+                        <label for="meal5">香滷雞腿</label>
+                        <span class="price">$105</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="醬燒滷肉,95" id="meal6">
+                        <label for="meal6">醬燒滷肉</label>
+                        <span class="price">$95</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="香酥雞腿,110" id="meal7">
+                        <label for="meal7">香酥雞腿</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="紅燒牛肉,110" id="meal8">
+                        <label for="meal8">紅燒牛肉</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤雞腿,110" id="meal9">
+                        <label for="meal9">燒烤雞腿</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="慢燉牛筋,110" id="meal10">
+                        <label for="meal10">慢燉牛筋</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="乾煎松阪,100" id="meal11">
+                        <label for="meal11">乾煎松阪</label>
+                        <span class="price">$100</span>
+                    </div>
+                </div>
+
+                <!-- 姓名欄位 -->
+                <div class="form-group name-input">
+                    <label for="userName">姓名：</label>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+
+                <!-- 備註欄位 -->
+                <div class="form-group">
+                    <label for="remarks">備註：</label>
+                    <textarea id="remarks" name="remarks"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">提交訂單</button>
+            </form>
+        </div>
+    </div>
+    <div class="collapse" id="collapseMenu2">
+        <div class="card card-body">
+            B店菜單內容...
+            
+        </div>
+    </div>
+    <div class="collapse" id="collapseMenu3">
+        <div class="card card-body">
+            C店菜單內容...
+        </div>
+    </div>
+</div>
     <div class="order-controls">
         <div class="order-header">
             <h2>今日訂單列表 ({{ today_date }})</h2>
             <div class="today-total">今日總計: ${{ today_total }}</div>
         </div>
+        
+        
+
         <form action="{{ url_for('toggle_order_status') }}" method="POST">
             <button type="submit" class="close-order-btn">
                 <i class="fas fa-lock"></i> 收單
@@ -706,5 +1256,9 @@
         });
     });
     </script>
+
+    <!-- 添加必要的 Bootstrap CSS 和 JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
