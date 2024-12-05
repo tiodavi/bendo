@@ -1012,7 +1012,7 @@
     </div>
 
     <h1>訂餐系統</h1>
-    <h1>如果設定的菜單找不到餐點就在這邊填寫餐點和價格來訂餐</h1>
+    <h1>如果設定的菜單找不到餐點  在這邊填寫餐點和價格來訂餐</h1>
     
     <form method="POST" action="/" class="order-form">
         <div class="main-fields">
@@ -1110,7 +1110,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="燒烤雞腿,110" id="meal9">
+                        <input type="radio" name="meal" value="��烤雞腿,110" id="meal9">
                         <label for="meal9">燒烤雞腿</label>
                         <span class="price">$110</span>
                     </div>
@@ -1242,7 +1242,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雞柳飯,85" id="meal22">
+                        <input type="radio" name="meal" value="雞��飯,85" id="meal22">
                         <label for="meal22">雞柳飯</label>
                         <span class="price">$85</span>
                     </div>
@@ -1292,7 +1292,97 @@
     </div>
     <div class="collapse" id="collapseMenu3">
         <div class="card card-body">
-            C店菜單內容...
+            <img src="https://imgur.com/RVMkScp.jpg" alt="八葉餐點" style="width:100%; height:auto; margin-bottom:20px;">
+            八葉菜單內容...
+            <form action="{{ url_for('order') }}" method="POST" class="menu-form">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="招牌海陸雞腿飯,150" id="meal32" required>
+                        <label for="meal32">招牌海陸雞腿飯</label>
+                        <span class="price">$150</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤雞腿飯,110" id="meal33">
+                        <label for="meal33">燒烤雞腿飯</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤香酥雞腿飯,110" id="meal34">
+                        <label for="meal34">燒烤香酥雞腿飯</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="酥脆雞腿飯,110" id="meal35">
+                        <label for="meal35">酥脆雞腿飯</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤雞排飯,100" id="meal36">
+                        <label for="meal36">燒烤雞排飯</label>
+                        <span class="price">$100</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤腿排飯,90" id="meal37">
+                        <label for="meal37">燒烤腿排飯</label>
+                        <span class="price">$90</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="烤肉飯,85" id="meal38">
+                        <label for="meal38">烤肉飯</label>
+                        <span class="price">$85</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤排骨飯,95" id="meal39">
+                        <label for="meal39">燒烤排骨飯</label>
+                        <span class="price">$95</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤五花肉飯,100" id="meal40">
+                        <label for="meal40">燒烤五花肉飯</label>
+                        <span class="price">$100</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤鮭魚飯,110" id="meal41">
+                        <label for="meal41">燒烤鮭魚飯</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤魷魚飯,110" id="meal42">
+                        <label for="meal42">燒烤魷魚飯</label>
+                        <span class="price">$110</span>
+                    </div>
+
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="燒烤鯖魚飯,110" id="meal43">
+                        <label for="meal43">燒烤鯖魚飯</label>
+                        <span class="price">$110</span>
+                    </div>
+                </div>
+
+                <!-- 姓名欄位 -->
+                <div class="form-group name-input">
+                    <label for="userName">姓名：</label>
+                    <input type="text" id="userName" name="userName" required>
+                </div>
+
+                <!-- 備註欄位 -->
+                <div class="form-group">
+                    <label for="remarks">備註：</label>
+                    <textarea id="remarks" name="remarks"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">提交訂單</button>
+            </form>
         </div>
     </div>
 </div>
@@ -1422,7 +1512,7 @@
     });
 
     document.querySelector('.close-order-btn').addEventListener('click', function(e) {
-        if (!confirm('確定要收單嗎？收單後將無法刪除訂單，只能進行付款確認。')) {
+        if (!confirm('確定要收單？收單後將無法刪除訂單，只能進行付款確認。')) {
             e.preventDefault();
         }
     });
