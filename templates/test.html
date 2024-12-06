@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查詢樂透紀錄範例</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .required::after {
+            content: '*';
+            color: red;
+            margin-left: 4px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .code-btn {
+            background-color: #e0e0e0;
+        }
+        .execute-btn {
+            background-color: #0052cc;
+            color: white;
+        }
+        #results {
+            margin-top: 20px;
+        }
+        .toggle-switch {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>1. 查詢樂透紀錄範例</h2>
+        <div class="toggle-switch">
+            只顯示必填 <input type="checkbox" id="showRequired">
+        </div>
+
+        <div class="form-group">
+            <label class="required">開獎類型</label>
+            <select id="drawType">
+                <option value="2">大樂透</option>
+                <option value="1">威力彩</option>
+                <option value="3">今彩539</option>
+                <option value="4">3星彩</option>
+                <option value="5">4星彩</option>
+                <option value="6">39樂合彩</option>
+                <option value="7">49樂合彩</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="required">年份</label>
+            <select id="drawYear">
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="required">月份</label>
+            <select id="drawMonth">
+                <option value="1">1月</option>
+                <option value="2">2月</option>
+                <option value="3">3月</option>
+                <option value="4">4月</option>
+                <option value="5">5月</option>
+                <option value="6">6月</option>
+                <option value="7">7月</option>
+                <option value="8">8月</option>
+                <option value="9">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button class="code-btn" onclick="showCode()">程式碼</button>
+            <button class="execute-btn" onclick="fetchLotteryData()">執行</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        async function fetchLotteryData() {
+            const drawType = document.getElementById('drawType').value;
+            const drawYear = document.getElementById('drawYear').value;
+            const drawMonth = document.getElementById('drawMonth').value;
+            
+            try {
+                const response = await axios({
+                    method: 'post',
+                    url: '/api/lottery',
+                    data: {
+                        draw_type: parseInt(drawType),
+                        draw_year: parseInt(drawYear),
+                        draw_month: parseInt(drawMonth)
+                    },
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const resultsDiv = document.getElementById('results');
+                if (response.data) {
+                    resultsDiv.innerHTML = `<pre>${JSON.stringify(response.data, null, 2)}</pre>`;
+                } else {
+                    resultsDiv.innerHTML = '<p style="color: red;">無資料</p>';
+                }
+            } catch (error) {
+                console.error('Error details:', error);
+                document.getElementById('results').innerHTML = 
+                    `<p style="color: red;">錯誤信息: ${error.response?.data?.error || error.message}</p>`;
+            }
+        }
+
+        function showCode() {
+            // 顯示程式碼的邏輯
+            alert('顯示程式碼功能待實現');
+        }
+
+        // 設置預設值
+        window.onload = function() {
+            document.getElementById('drawType').value = "2"; // 大樂透
+            document.getElementById('drawYear').value = "2024";
+            document.getElementById('drawMonth').value = "11";
+        }
+    </script>
+</body>
+</html>

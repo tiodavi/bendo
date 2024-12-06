@@ -60,6 +60,16 @@ def update_payment(order_id):
     conn.close()
     return redirect('/')
 
+@app.route('/update_remarks/<int:order_id>', methods=['POST'])
+def update_remarks(order_id):
+    new_remarks = request.form['new_remarks']
+    conn = sqlite3.connect('orders.db')
+    c = conn.cursor()
+    c.execute('UPDATE orders SET remarks = ? WHERE id = ?', (new_remarks, order_id))
+    conn.commit()
+    conn.close()
+    return redirect('/')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -125,6 +135,10 @@ def index():
 @app.route('/store1')
 def store1():
     return render_template('store1.html')
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
 
 @app.route('/order', methods=['POST'])
 def order():

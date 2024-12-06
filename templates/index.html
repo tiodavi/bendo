@@ -617,34 +617,63 @@
 
         .menu-item {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
+            flex-direction: column;
+            padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 8px;
             background: white;
+            min-height: 100px;
+        }
+
+        .menu-item-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 8px;
         }
 
         .menu-item input[type="radio"] {
             width: 20px;
             height: 20px;
+            margin-top: 4px;
             cursor: pointer;
         }
 
-        .menu-item label {
-            margin: 0;
-            cursor: pointer;
+        .menu-label {
             flex-grow: 1;
+            cursor: pointer;
+        }
+
+        .dish-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .dish-content {
+            font-size: 14px;
+            color: #666;
         }
 
         .price {
             color: #ff4444;
             font-weight: bold;
+            font-size: 1.2em;
+            margin-top: auto;
+            align-self: flex-end;
         }
 
         @media screen and (max-width: 768px) {
             .menu-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .dish-name {
+                font-size: 14px;
+            }
+            
+            .dish-content {
+                font-size: 12px;
             }
         }
 
@@ -1004,6 +1033,60 @@
             background-color: #004494;
             transform: translateY(0);
         }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .menu-item {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .menu-item-title {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            position: absolute;
+            right: 15px;
+            color: #e44d26;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .radio-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            margin-right: 60px; /* 为价格预留空间 */
+        }
+
+        .menu-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dish-name {
+            font-weight: bold;
+        }
+
+        .dish-content {
+            font-size: 0.8em;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -1012,7 +1095,7 @@
     </div>
 
     <h1>訂餐系統</h1>
-    <h1>如果設定的菜單找不到餐點  在這邊填寫餐點和價格來訂餐</h1>
+    <!-- <h1>果設定的菜單找不到餐點  在這邊填寫餐點和價格來訂餐</h1>
     
     <form method="POST" action="/" class="order-form">
         <div class="main-fields">
@@ -1036,7 +1119,7 @@
             </div>
         </div>
         <button type="submit">提交訂單</button>
-    </form>
+    </form> -->
 <!-- 添加三個 collapse 按鈕 -->
 <div class="collapse-buttons">
     <p>
@@ -1110,7 +1193,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="��烤雞腿,110" id="meal9">
+                        <input type="radio" name="meal" value="烤雞腿,110" id="meal9">
                         <label for="meal9">燒烤雞腿</label>
                         <span class="price">$110</span>
                     </div>
@@ -1135,7 +1218,7 @@
 
                     <div class="menu-item">
                         <input type="radio" name="meal" value="薄鹽靖魚,95" id="meal28">
-                        <label for="meal28">薄鹽靖魚</label>
+                        <label for="meal28">薄靖魚</label>
                         <span class="price">$95</span>
                     </div>
 
@@ -1182,20 +1265,35 @@
                 <!-- 菜單網格 3x4 -->
                 <div class="menu-grid">
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雙拼A（雞腿+排骨）,105" id="meal12" required>
-                        <label for="meal12">雙拼A（雞腿+排骨）</label>
+                        <div class="menu-item-header">
+                            <input type="radio" name="meal" value="雙拼A（鸡腿+排骨）,105" id="meal12">
+                            <div class="menu-label">
+                                <div class="dish-name">雙拼A</div>
+                                <div class="dish-content">（機腿+排骨）</div>
+                            </div>
+                        </div>
                         <span class="price">$105</span>
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雙拼B（雞腿+魚排）,105" id="meal13">
-                        <label for="meal13">雙拼B（雞腿+魚排）</label>
+                        <div class="menu-item-header">
+                            <input type="radio" name="meal" value="双拼B（鸡腿+鱼排）,105" id="meal13">
+                            <div class="menu-label">
+                                <div class="dish-name">雙拼B</div>
+                                <div class="dish-content">（雞腿+鱼排）</div>
+                            </div>
+                        </div>
                         <span class="price">$105</span>
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雙拼C（排骨+魚排）,90" id="meal14">
-                        <label for="meal14">雙拼C（排骨+魚排）</label>
+                        <div class="menu-item-header">
+                            <input type="radio" name="meal" value="双拼C（排骨+鱼排）,90" id="meal14">
+                            <div class="menu-label">
+                                <div class="dish-name">雙拼C</div>
+                                <div class="dish-content">（排骨+鱼排）</div>
+                            </div>
+                        </div>
                         <span class="price">$90</span>
                     </div>
 
@@ -1212,9 +1310,9 @@
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雞排飯,105" id="meal17">
+                        <input type="radio" name="meal" value="雞排飯,110" id="meal17">
                         <label for="meal17">雞排飯</label>
-                        <span class="price">$105</span>
+                        <span class="price">$110</span>
                     </div>
 
                     <div class="menu-item">
@@ -1242,7 +1340,7 @@
                     </div>
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="雞��飯,85" id="meal22">
+                        <input type="radio" name="meal" value="雞飯,85" id="meal22">
                         <label for="meal22">雞柳飯</label>
                         <span class="price">$85</span>
                     </div>
@@ -1262,7 +1360,7 @@
                     
 
                     <div class="menu-item">
-                        <input type="radio" name="meal" value="肉燥飯,40" id="meal25">
+                        <input type="radio" name="meal" value="肉飯,40" id="meal25">
                         <label for="meal25">肉燥飯</label>
                         <span class="price">$40</span>
                     </div>
@@ -1316,7 +1414,7 @@
 
                     <div class="menu-item">
                         <input type="radio" name="meal" value="酥脆雞腿飯,110" id="meal35">
-                        <label for="meal35">酥脆雞腿飯</label>
+                        <label for="meal35">酥脆雞腿</label>
                         <span class="price">$110</span>
                     </div>
 
@@ -1371,7 +1469,7 @@
 
                 <!-- 姓名欄位 -->
                 <div class="form-group name-input">
-                    <label for="userName">姓名：</label>
+                    <label for="userName">名：</label>
                     <input type="text" id="userName" name="userName" required>
                 </div>
 
@@ -1431,16 +1529,24 @@
                                         data-order-info="訂單資訊：
 姓名：{{ order.user_name }}
 餐點：{{ order.lunch_name }}
-價格：{{ order.price }}">
+價��：{{ order.price }}">
                                     <i class="fas fa-trash"></i> 刪除
                                 </button>
                             </form>
-                        {% elif order.order_status == '已收單' and order.payment_status != '已付款' %}
-                            <form action="{{ url_for('update_payment', order_id=order.id) }}" method="POST" style="margin: 0;">
-                                <button type="submit" class="payment-btn">
-                                    <i class="fas fa-check"></i> 確認付款
-                                </button>
-                            </form>
+                        {% elif order.order_status == '收單' and order.payment_status != '已付款' %}
+                            <div style="display: flex; gap: 10px; align-items: center;">
+                                <form action="{{ url_for('update_payment', order_id=order.id) }}" method="POST" style="margin: 0;">
+                                    <button type="submit" class="payment-btn">
+                                        <i class="fas fa-check"></i> 確認付款
+                                    </button>
+                                </form>
+                                <form action="{{ url_for('update_remarks', order_id=order.id) }}" method="POST" style="margin: 0; display: flex; gap: 5px;">
+                                    <input type="text" name="new_remarks" class="form-control" style="width: 150px;" placeholder="新增備註">
+                                    <button type="submit" class="btn btn-secondary btn-sm">
+                                        <i class="fas fa-edit"></i> 修改備註
+                                    </button>
+                                </form>
+                            </div>
                         {% endif %}
                     </td>
                 </tr>
