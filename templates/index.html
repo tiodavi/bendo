@@ -1093,7 +1093,7 @@
     <div class="top-nav">
         <a href="{{ url_for('store1') }}" class="store-link">測試中 錦堂點餐系統</a>
     </div>
-
+    <div class="tenor-gif-embed" data-postid="21995730" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/elyswisnoto-bento-anime-food-gif-21995730">Elyswisnoto Bento GIF</a>from <a href="https://tenor.com/search/elyswisnoto-gifs">Elyswisnoto GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     <h1>訂餐系統</h1>
     <!-- <h1>果設定的菜單找不到餐點  在這邊填寫餐點和價格來訂餐</h1>
     
@@ -1465,6 +1465,12 @@
                         <label for="meal43">燒烤鯖魚飯</label>
                         <span class="price">$110</span>
                     </div>
+                    <div class="menu-item">
+                        <input type="radio" name="meal" value="飯菜,70" id="meal44">
+                        <label for="meal44">飯菜</label>
+                        <span class="price">$70</span>
+                    </div>
+                    
                 </div>
 
                 <!-- 姓名欄位 -->
@@ -1533,7 +1539,7 @@
                                     <i class="fas fa-trash"></i> 刪除
                                 </button>
                             </form>
-                        {% elif order.order_status == '收單' and order.payment_status != '已付款' %}
+                        {% elif order.order_status == '已收單' and order.payment_status != '已付款' %}
                             <div style="display: flex; gap: 10px; align-items: center;">
                                 <form action="{{ url_for('update_payment', order_id=order.id) }}" method="POST" style="margin: 0;">
                                     <button type="submit" class="payment-btn">
